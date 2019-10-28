@@ -1,0 +1,59 @@
+.anim-fastest {
+  animation-duration: 0.5s !important;
+}
+
+.trans {
+  transition: all .2s ease-out;
+}
+
+.trans-bg {
+  transition-property: background;
+}
+
+.trans-snail {
+  transition-duration: 1.75s;
+}
+
+.trans-escargot {
+  transition-duration: 1.5s;
+}
+
+.trans-slowest {
+  transition-duration: 1.25s;
+}
+
+.trans-slower {
+  transition-duration: .75s;
+}
+
+.trans-slow {
+  transition-duration: .5s;
+}
+
+.trans-mediumer {
+  transition-duration: .425s;
+}
+
+.trans-mediumest {
+  transition-duration: .35s;
+}
+
+.trans-medium {
+  transition-duration: .225s;
+}
+
+.trans-fast {
+  transition-duration: .15s;
+}
+
+.trans-faster {
+  transition-duration: .075s;
+}
+
+.trans-fastest {
+  transition-duration: .05s;
+}
+
+.trans-elastic {
+	transition-timing-function: cubic-bezier(.75,-0.5,0,1.5);
+}
