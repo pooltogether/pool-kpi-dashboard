@@ -1,1 +1,1 @@
-NEXT_JS_GRAPHQL_ENDPOINT_URI=https://api.thegraph.com/subgraphs/name/asselstine/pooltogether
+export NEXT_JS_GRAPHQL_ENDPOINT_URI=https://api.thegraph.com/subgraphs/name/asselstine/pooltogether

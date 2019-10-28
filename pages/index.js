@@ -1,6 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 
+import { HomePane } from 'lib/components/HomePane'
+
 import 'assets/styles/normalize-opentype.css'
 import 'assets/styles/index.css'
 import 'assets/styles/layout.css'
@@ -16,9 +18,7 @@ const Home = () => (
       <link rel='icon' href='/favicon.ico' />
     </Head>
 
-    <h1>
-      PoolTogether Logo
-    </h1> 
+    <HomePane />
   </>
 )
 
