@@ -15,24 +15,12 @@ export const HomePane = () => {
   useEffect(() => {
     async function fetchStats() {
       const response = await fetchFromGraph().catch(e => console.error(e))
-      console.log(response)
       setStats(response)
     }
     fetchStats()
-  }, [])
-  console.log(stats)
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     // You can await here
-  //     const response = await MyAPI.getData(someId);
-  //     // ...
-  //   }
-  //   fetchData();
-  // }, [someId]); // Or [] if effect doesn't need props or state
+  }, [stats])
 
   return <div style={{
-    backgroundColor: '#340A69',
     color: 'white',
     height: '100vh',
     margin: 0
@@ -40,30 +28,50 @@ export const HomePane = () => {
     <img
       src={PoolTogetherLogoWhite}
       style={{
-        margin: 40
+        margin: 50
       }}
     />
 
-    <h4>
-      # Current players
-    </h4>
-    <h1>
-      {stats.currentPlayersCount}
-    </h1>
+    <div className='flex flex-wrap overflow-hidden sm:-mx-2 text-center w-2/3'>
+      <div className='w-full overflow-hidden sm:my-2 sm:px-2 sm:w-full md:w-1/3'>
+        <div
+          className='font-headline mt-2 text-4xl text-green-400'
+        >
+          # Current players
+        </div>
+        <div
+          className='font-bold text-10xl -mt-6'
+        >
+          {stats.currentPlayersCount}
+        </div>
+      </div>
 
-    <h4>
-      # All players
-    </h4>
-    <h1>
-      {stats.allPlayersCount}
-    </h1>
+      <div className='w-full overflow-hidden sm:my-2 sm:px-2 sm:w-full md:w-1/3'>
+        <div
+          className='font-headline mt-2 text-4xl text-pink-400'
+        >
+          # Total players
+        </div>
+        <div
+          className='font-bold text-10xl -mt-6'
+        >
+          {stats.allPlayersCount}
+        </div>
+      </div>
 
-    <h4>
-      # Previous players
-    </h4>
-    <h1>
-      {stats.previousPlayersCount}
-    </h1>
+      <div className='w-full overflow-hidden sm:my-2 sm:px-2 sm:w-full md:w-1/3'>
+        <div
+          className='font-headline mt-2 text-4xl text-pink-400'
+        >
+          # Previous players
+        </div>
+        <div
+          className='font-bold text-10xl -mt-6'
+        >
+          {stats.previousPlayersCount}
+        </div>
+      </div>
+    </div>
 
   </div>
 }

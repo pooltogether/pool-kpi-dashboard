@@ -25,7 +25,9 @@ html {
 }
 
 body {
-  @apply bg-lightPurple-900 font-sans-regular;
+  @apply font-sans-regular;
+  
+  background-color: #340A69;
   background-image: url(/static/simple-pattern.png);
   overflow-x: hidden;
 }
