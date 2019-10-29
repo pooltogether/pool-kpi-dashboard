@@ -13,12 +13,32 @@ export const HomePane = () => {
   })
 
   useEffect(() => {
-    async function fetchStats() {
-      const response = await fetchFromGraph().catch(e => console.error(e))
-      setStats(response)
+    if (window && window.setInterval) {
+      const getStats = () => {
+        async function fetchStats() {
+          const response = await fetchFromGraph().catch(e => console.error(e))
+          setStats(response)
+        }
+        fetchStats()
+      }
+
+      // run right away
+      getStats()
+
+      // run every 10 minutes
+      const timer = setInterval(() => getStats, 600000)
+
+      return () => clearInterval(timer)
     }
-    fetchStats()
-  }, [stats])
+  }, [])
+
+  // useEffect(() => {
+  //   async function fetchStats() {
+  //     const response = await fetchFromGraph().catch(e => console.error(e))
+  //     setStats(response)
+  //   }
+  //   fetchStats()
+  // }, [stats])
 
   return <div style={{
     color: 'white',
